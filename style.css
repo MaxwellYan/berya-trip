@@ -51,12 +51,19 @@ img {
    ========================= */
 
 .trip-header {
-  background:
-    linear-gradient(135deg, rgba(28, 110, 140, 0.94), rgba(76, 151, 143, 0.92)),
-    linear-gradient(45deg, #1c6e8c, #4c978f);
+  position: relative;
   color: white;
-  padding: 44px 20px 38px;
+  padding: 58px 20px 52px;
   text-align: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(135deg, rgba(28, 110, 140, 0.82), rgba(76, 151, 143, 0.78)),
+    url("photo/蘭陽博物館2026061201.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .trip-header h1 {
