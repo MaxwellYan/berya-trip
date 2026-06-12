@@ -1,0 +1,251 @@
+/* =========================
+   BerYa Trip - Global Style
+   ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background: #f4f6f8;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.site-header {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.site-header p {
+  margin: 10px 0 0;
+  color: #d1d5db;
+  font-size: 16px;
+}
+
+/* =========================
+   Main Layout
+   ========================= */
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   Cards
+   ========================= */
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #111827;
+}
+
+.card h3 {
+  margin-top: 24px;
+  color: #374151;
+}
+
+.card p {
+  color: #4b5563;
+}
+
+/* =========================
+   Trip Grid
+   ========================= */
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.trip-card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.trip-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.trip-card p {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #111827;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: #374151;
+  transform: translateY(-2px);
+}
+
+.button-light {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.button-light:hover {
+  background: #d1d5db;
+}
+
+/* =========================
+   Iframe HackMD
+   ========================= */
+
+.iframe-wrapper {
+  width: 100%;
+  height: calc(100vh - 90px);
+  background: white;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: #111827;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #2563eb;
+}
+
+/* =========================
+   Tags
+   ========================= */
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer {
+  text-align: center;
+  padding: 32px 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 32px 16px;
+  }
+
+  .site-header h1 {
+    font-size: 26px;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 0 14px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iframe-wrapper {
+    height: calc(100vh - 80px);
+  }
+}
