@@ -1,6 +1,6 @@
 /* ======================================================
-   BerYa Trip - style.css
-   靜態 SPA / Vue-like 架構專用
+   BerYa Trip - Fresh Travel Theme
+   宜蘭旅遊風格：海藍 / 霧灰 / 米白 / 淡綠
    ====================================================== */
 
 
@@ -19,8 +19,8 @@ html {
 body {
   margin: 0;
   font-family: Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  background: #f4f6f8;
-  color: #222;
+  background: #eef5f6;
+  color: #243447;
   line-height: 1.7;
 }
 
@@ -31,7 +31,7 @@ a {
 img {
   max-width: 100%;
   display: block;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 
@@ -51,29 +51,32 @@ img {
    ========================= */
 
 .trip-header {
-  background: linear-gradient(135deg, #111827, #1f2937);
+  background:
+    linear-gradient(135deg, rgba(28, 110, 140, 0.94), rgba(76, 151, 143, 0.92)),
+    linear-gradient(45deg, #1c6e8c, #4c978f);
   color: white;
-  padding: 36px 20px;
+  padding: 44px 20px 38px;
   text-align: center;
 }
 
 .trip-header h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 36px;
   letter-spacing: 1px;
+  font-weight: 800;
 }
 
 .trip-header p {
-  margin: 8px 0 0;
-  color: #d1d5db;
+  margin: 10px 0 0;
+  color: #e8f6f5;
   font-size: 16px;
 }
 
 .eyebrow {
   margin: 0 0 8px;
-  color: #93c5fd;
-  font-weight: bold;
-  letter-spacing: 1.5px;
+  color: #dff7f3;
+  font-weight: 800;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   font-size: 13px;
 }
@@ -84,8 +87,8 @@ img {
    ========================= */
 
 .trip-nav {
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid #d6e3e5;
   padding: 12px 16px;
   display: flex;
   gap: 10px;
@@ -93,14 +96,15 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 18px rgba(36, 52, 71, 0.06);
 }
 
 .trip-nav a {
   white-space: nowrap;
   text-decoration: none;
-  color: #374151;
-  font-weight: bold;
+  color: #31505f;
+  font-weight: 700;
   padding: 8px 14px;
   border-radius: 999px;
   transition: 0.2s ease;
@@ -108,12 +112,12 @@ img {
 }
 
 .trip-nav a:hover {
-  background: #f3f4f6;
-  color: #111827;
+  background: #e4f2f2;
+  color: #1c6e8c;
 }
 
 .trip-nav a.active {
-  background: #111827;
+  background: #1c6e8c;
   color: white;
 }
 
@@ -124,9 +128,9 @@ img {
 
 .trip-main {
   width: 100%;
-  max-width: 1080px;
-  margin: 30px auto;
-  padding: 0 20px;
+  max-width: 1120px;
+  margin: 32px auto;
+  padding: 0 22px;
   flex: 1;
 }
 
@@ -140,20 +144,26 @@ img {
    ========================= */
 
 .hero-card {
-  background: linear-gradient(135deg, #111827, #1f2937);
-  color: white;
-  border-radius: 24px;
-  padding: 38px 30px;
-  margin-bottom: 26px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(239, 250, 248, 0.96));
+  color: #243447;
+  border-radius: 28px;
+  padding: 42px 34px;
+  margin-bottom: 28px;
+  box-shadow: 0 14px 34px rgba(36, 52, 71, 0.10);
+  border: 1px solid #dcebec;
+}
+
+.hero-card .eyebrow {
+  color: #1c6e8c;
 }
 
 .hero-card .page-title {
-  color: white;
+  color: #1d3340;
 }
 
 .hero-card .page-description {
-  color: #d1d5db;
+  color: #5f7280;
   margin-bottom: 0;
 }
 
@@ -163,13 +173,14 @@ img {
    ========================= */
 
 .page-title {
-  font-size: 32px;
+  font-size: 34px;
   margin: 0 0 12px;
-  color: #111827;
+  color: #1d3340;
+  font-weight: 800;
 }
 
 .page-description {
-  color: #6b7280;
+  color: #5f7280;
   margin: 0 0 24px;
   font-size: 16px;
 }
@@ -180,28 +191,30 @@ img {
    ========================= */
 
 .card {
-  background: white;
-  border-radius: 20px;
-  padding: 26px;
-  margin-bottom: 22px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 28px rgba(36, 52, 71, 0.08);
+  border: 1px solid #e0eaec;
 }
 
 .card h2 {
   margin-top: 0;
-  margin-bottom: 16px;
-  color: #111827;
-  font-size: 24px;
+  margin-bottom: 18px;
+  color: #1d3340;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 .card h3 {
-  color: #374151;
+  color: #284555;
   margin-top: 0;
   margin-bottom: 8px;
 }
 
 .card p {
-  color: #4b5563;
+  color: #5b6d78;
 }
 
 .card ul {
@@ -210,6 +223,7 @@ img {
 
 .card li {
   margin-bottom: 8px;
+  color: #5b6d78;
 }
 
 
@@ -219,26 +233,27 @@ img {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
 }
 
 .info-box {
-  background: #f9fafb;
-  border-radius: 16px;
-  padding: 18px;
-  border: 1px solid #e5e7eb;
+  background: #f7fbfb;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid #dce9ea;
 }
 
 .info-box h3 {
   margin-top: 0;
   margin-bottom: 8px;
-  color: #111827;
+  color: #1d3340;
+  font-size: 19px;
 }
 
 .info-box p {
   margin: 0;
-  color: #4b5563;
+  color: #5b6d78;
 }
 
 
@@ -250,12 +265,18 @@ img {
   display: block;
   text-decoration: none;
   color: inherit;
-  transition: 0.2s ease;
+  transition: 0.22s ease;
 }
 
 .link-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  background: #effafa;
+  border-color: #9ed8d2;
+  box-shadow: 0 12px 26px rgba(28, 110, 140, 0.14);
+}
+
+.link-box h3 {
+  color: #1c6e8c;
 }
 
 
@@ -269,20 +290,23 @@ img {
 }
 
 .timeline-item {
-  background: #f9fafb;
-  border-left: 5px solid #111827;
-  border-radius: 14px;
-  padding: 16px 18px;
+  background: #f7fbfb;
+  border-left: 5px solid #4c978f;
+  border-radius: 16px;
+  padding: 18px 20px;
+  border-top: 1px solid #dce9ea;
+  border-right: 1px solid #dce9ea;
+  border-bottom: 1px solid #dce9ea;
 }
 
 .timeline-item h3 {
   margin: 0 0 6px;
-  color: #111827;
+  color: #1d3340;
 }
 
 .timeline-item p {
   margin: 0;
-  color: #4b5563;
+  color: #5b6d78;
 }
 
 
@@ -313,27 +337,27 @@ img {
 
 .btn {
   display: inline-block;
-  padding: 10px 16px;
-  background: #111827;
+  padding: 10px 17px;
+  background: #1c6e8c;
   color: white;
   text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
+  border-radius: 14px;
+  font-weight: 800;
   transition: 0.2s ease;
 }
 
 .btn:hover {
-  background: #374151;
+  background: #15546b;
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: #e5e7eb;
-  color: #111827;
+  background: #e3eeee;
+  color: #1d3340;
 }
 
 .btn-secondary:hover {
-  background: #d1d5db;
+  background: #d1e4e3;
 }
 
 
@@ -343,8 +367,8 @@ img {
 
 .table-wrapper {
   overflow-x: auto;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  border: 1px solid #dce9ea;
 }
 
 table {
@@ -355,18 +379,18 @@ table {
 
 th,
 td {
-  padding: 12px 14px;
+  padding: 13px 15px;
   text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e2ecee;
 }
 
 th {
-  background: #f9fafb;
-  color: #111827;
+  background: #f2f8f8;
+  color: #1d3340;
 }
 
 td {
-  color: #4b5563;
+  color: #5b6d78;
 }
 
 
@@ -376,11 +400,12 @@ td {
 
 .tag {
   display: inline-block;
-  padding: 4px 10px;
-  background: #eef2ff;
-  color: #3730a3;
+  padding: 5px 11px;
+  background: #e2f4f2;
+  color: #1c6e8c;
   border-radius: 999px;
   font-size: 13px;
+  font-weight: 700;
   margin-right: 6px;
   margin-bottom: 6px;
 }
@@ -393,7 +418,7 @@ td {
 .loading {
   padding: 48px;
   text-align: center;
-  color: #6b7280;
+  color: #5f7280;
   font-size: 16px;
 }
 
@@ -410,10 +435,10 @@ td {
   display: inline-block;
   margin-top: 16px;
   padding: 10px 16px;
-  background: #111827;
+  background: #1c6e8c;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 
@@ -436,7 +461,7 @@ td {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
 
   to {
@@ -452,7 +477,7 @@ td {
 
 @media (max-width: 768px) {
   .trip-header {
-    padding: 30px 16px;
+    padding: 34px 16px 30px;
   }
 
   .trip-header h1 {
@@ -464,13 +489,13 @@ td {
   }
 
   .trip-main {
-    margin: 22px auto;
+    margin: 24px auto;
     padding: 0 14px;
   }
 
   .hero-card {
     padding: 30px 22px;
-    border-radius: 20px;
+    border-radius: 22px;
   }
 
   .page-title {
@@ -479,7 +504,7 @@ td {
 
   .card {
     padding: 22px;
-    border-radius: 16px;
+    border-radius: 18px;
   }
 
   .card h2 {
