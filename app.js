@@ -1,7 +1,7 @@
 const routes = {
   "/": {
     title: "首頁",
-    file: "pages/home.html"
+    file: "page_folder/2026/june/yilan/home.html"
   },
   "/home": {
     title: "首頁",
