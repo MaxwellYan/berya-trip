@@ -1,3 +1,13 @@
+/* ======================================================
+   BerYa Trip - style.css
+   靜態 SPA / Vue-like 架構專用
+   ====================================================== */
+
+
+/* =========================
+   Global Reset
+   ========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -18,130 +28,176 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 14px;
+}
+
+
 /* =========================
-   App Shell
+   App Base
    ========================= */
 
-.app-shell {
+.trip-app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+
 /* =========================
    Header
    ========================= */
 
-.app-header {
+.trip-header {
   background: linear-gradient(135deg, #111827, #1f2937);
   color: white;
-  padding: 32px 20px;
+  padding: 36px 20px;
   text-align: center;
 }
 
-.app-header h1 {
+.trip-header h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 34px;
   letter-spacing: 1px;
 }
 
-.app-header p {
+.trip-header p {
   margin: 8px 0 0;
   color: #d1d5db;
   font-size: 16px;
 }
 
+.eyebrow {
+  margin: 0 0 8px;
+  color: #93c5fd;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+
 /* =========================
    Navigation
    ========================= */
 
-.app-nav {
+.trip-nav {
   background: white;
   border-bottom: 1px solid #e5e7eb;
-  padding: 12px 20px;
+  padding: 12px 16px;
   display: flex;
-  gap: 14px;
-  justify-content: center;
+  gap: 10px;
+  overflow-x: auto;
   position: sticky;
   top: 0;
   z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
-.app-nav a {
+.trip-nav a {
+  white-space: nowrap;
   text-decoration: none;
-  font-weight: bold;
   color: #374151;
-  padding: 8px 12px;
+  font-weight: bold;
+  padding: 8px 14px;
   border-radius: 999px;
-  transition: 0.2s;
+  transition: 0.2s ease;
+  font-size: 15px;
 }
 
-.app-nav a:hover {
+.trip-nav a:hover {
   background: #f3f4f6;
   color: #111827;
 }
 
-.app-nav a.active {
+.trip-nav a.active {
   background: #111827;
   color: white;
 }
 
+
 /* =========================
-   Main
+   Main Layout
    ========================= */
 
-.app-main {
+.trip-main {
   width: 100%;
-  max-width: 1000px;
-  margin: 28px auto;
+  max-width: 1080px;
+  margin: 30px auto;
   padding: 0 20px;
   flex: 1;
 }
-
-/* =========================
-   Footer
-   ========================= */
-
-.app-footer {
-  text-align: center;
-  padding: 28px 20px;
-  color: #6b7280;
-  font-size: 14px;
-}
-
-/* =========================
-   Page Content
-   ========================= */
 
 .page {
   animation: fadeIn 0.25s ease;
 }
 
+
+/* =========================
+   Hero Card
+   ========================= */
+
+.hero-card {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
+  border-radius: 24px;
+  padding: 38px 30px;
+  margin-bottom: 26px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+.hero-card .page-title {
+  color: white;
+}
+
+.hero-card .page-description {
+  color: #d1d5db;
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   Page Title
+   ========================= */
+
 .page-title {
-  font-size: 30px;
+  font-size: 32px;
   margin: 0 0 12px;
+  color: #111827;
 }
 
 .page-description {
   color: #6b7280;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
+  font-size: 16px;
 }
+
+
+/* =========================
+   Card
+   ========================= */
 
 .card {
   background: white;
-  border-radius: 18px;
-  padding: 24px;
-  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 26px;
+  margin-bottom: 22px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .card h2 {
   margin-top: 0;
+  margin-bottom: 16px;
   color: #111827;
+  font-size: 24px;
 }
 
 .card h3 {
   color: #374151;
+  margin-top: 0;
+  margin-bottom: 8px;
 }
 
 .card p {
@@ -153,8 +209,95 @@ a {
 }
 
 .card li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
+
+
+/* =========================
+   Grid / Info Box
+   ========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.info-box {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.info-box p {
+  margin: 0;
+  color: #4b5563;
+}
+
+
+/* =========================
+   Link Box
+   ========================= */
+
+.link-box {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+.link-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   Timeline
+   ========================= */
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline-item {
+  background: #f9fafb;
+  border-left: 5px solid #111827;
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.timeline-item h3 {
+  margin: 0 0 6px;
+  color: #111827;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: #4b5563;
+}
+
+
+/* =========================
+   Lists
+   ========================= */
+
+.check-list {
+  padding-left: 22px;
+}
+
+.check-list li {
+  margin-bottom: 8px;
+}
+
 
 /* =========================
    Buttons
@@ -165,6 +308,7 @@ a {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 18px;
+  margin-bottom: 24px;
 }
 
 .btn {
@@ -175,7 +319,7 @@ a {
   text-decoration: none;
   border-radius: 12px;
   font-weight: bold;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
 
 .btn:hover {
@@ -192,31 +336,66 @@ a {
   background: #d1d5db;
 }
 
+
 /* =========================
-   Info Grid
+   Table
    ========================= */
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.info-box {
-  background: #f9fafb;
+.table-wrapper {
+  overflow-x: auto;
   border-radius: 14px;
-  padding: 16px;
   border: 1px solid #e5e7eb;
 }
 
-.info-box h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
 }
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f9fafb;
+  color: #111827;
+}
+
+td {
+  color: #4b5563;
+}
+
+
+/* =========================
+   Tags
+   ========================= */
+
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 999px;
+  font-size: 13px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
 
 /* =========================
    Loading / Error
    ========================= */
+
+.loading {
+  padding: 48px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 16px;
+}
 
 .loading-page,
 .error-page {
@@ -237,6 +416,19 @@ a {
   border-radius: 10px;
 }
 
+
+/* =========================
+   Footer Optional
+   ========================= */
+
+.trip-footer {
+  text-align: center;
+  padding: 28px 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
 /* =========================
    Animation
    ========================= */
@@ -253,35 +445,58 @@ a {
   }
 }
 
+
 /* =========================
    Mobile
    ========================= */
 
 @media (max-width: 768px) {
-  .app-header {
-    padding: 28px 16px;
+  .trip-header {
+    padding: 30px 16px;
   }
 
-  .app-header h1 {
-    font-size: 26px;
+  .trip-header h1 {
+    font-size: 28px;
   }
 
-  .app-nav {
-    justify-content: flex-start;
-    overflow-x: auto;
+  .trip-header p {
+    font-size: 15px;
   }
 
-  .app-main {
-    margin: 20px auto;
+  .trip-main {
+    margin: 22px auto;
     padding: 0 14px;
   }
 
-  .card {
-    padding: 20px;
-    border-radius: 14px;
+  .hero-card {
+    padding: 30px 22px;
+    border-radius: 20px;
   }
 
   .page-title {
-    font-size: 26px;
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .card h2 {
+    font-size: 22px;
+  }
+
+  .trip-nav {
+    justify-content: flex-start;
+    padding: 10px 12px;
+  }
+
+  .trip-nav a {
+    font-size: 14px;
+    padding: 7px 12px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
