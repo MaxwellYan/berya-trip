@@ -464,7 +464,14 @@ td {
   border-radius: 12px;
 }
 
-
+.snack-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
 /* =========================
    Footer Optional
    ========================= */
