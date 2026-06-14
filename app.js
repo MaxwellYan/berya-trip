@@ -33,7 +33,7 @@ const pages = {
   },
   rainydayfilling: {
     title: "雨天備案",
-    file: "08_rainydayfilling.html"
+    file: "08_rainydayfiling.html"
   },
   staple: {
     title: "伴手禮",
