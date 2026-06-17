@@ -1,143 +1,111 @@
-const app = document.getElementById("app");
+const params = new URLSearchParams(window.location.search);
 
-const basePath = "page_folder/2026/june/yilan/";
+const tripPath = params.get("trip") || "2026/june/yilan";
+const currentPage = params.get("page") || "home";
 
-const pages = {
-  home: {
-    title: "首頁",
-    file: "01_home.html"
-  },
-  journey: {
-    title: "行程",
-    file: "02_journey.html"
-  },
-  snack: {
-    title: "小吃",
-    file: "03_snack.html"
-  },
-  gourmetfood: {
-    title: "美食餐廳",
-    file: "04_gourmetfood.html"
-  },
-  attractions: {
-    title: "景點",
-    file: "05_attractions.html"
-  },
-  ecologicalfarm: {
-    title: "生態農場",
-    file: "06_ecologicalfarm.html"
-  },
-  oldstreet: {
-    title: "老街",
-    file: "07_oldstreet.html"
-  },
-  rainydayfilling: {
-    title: "雨天備案",
-    file: "08_rainydayfiling.html"
-  },
-  staple: {
-    title: "伴手禮",
-    file: "09_staple.html"
-  },
-  hotel: {
-    title: "住宿",
-    file: "10_hotel.html"
+const basePath = `./page_folder/${tripPath}/`;
+
+let tripConfig = null;
+
+async function init() {
+  try {
+    const response = await fetch(basePath + "trip.json");
+
+    if (!response.ok) {
+      throw new Error("找不到 trip.json");
+    }
+
+    tripConfig = await response.json();
+
+    document.title = tripConfig.title;
+    document.getElementById("site-title").textContent = tripConfig.title;
+    document.getElementById("site-description").textContent = tripConfig.description;
+
+    renderNav();
+    loadPage(currentPage);
+
+  } catch (error) {
+    document.getElementById("content").innerHTML = `
+      <section class="card">
+        <h2>資料載入失敗</h2>
+        <p>請確認資料夾路徑是否正確：</p>
+        <code>${basePath}</code>
+      </section>
+    `;
+
+    console.error(error);
   }
-};
-
-function getCurrentPage() {
-  const hash = window.location.hash.replace("#/", "");
-  return hash || "home";
 }
 
-function renderShell() {
-  app.innerHTML = `
-    <div class="trip-app">
+function renderNav() {
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
 
-      <header class="trip-header">
-        <p class="eyebrow">BerYa Trip</p>
-        <h1>宜蘭旅遊資料</h1>
-        <p>行程、景點、美食、住宿與備案整理</p>
-      </header>
+  tripConfig.pages.forEach(page => {
+    const button = document.createElement("button");
+    button.textContent = page.title;
 
-      <nav class="trip-nav">
-        <a href="#/home" data-page="home">首頁</a>
-        <a href="#/journey" data-page="journey">行程</a>
-        <a href="#/snack" data-page="snack">小吃</a>
-        <a href="#/gourmetfood" data-page="gourmetfood">美食餐廳</a>
-        <a href="#/attractions" data-page="attractions">景點</a>
-        <a href="#/ecologicalfarm" data-page="ecologicalfarm">生態農場</a>
-        <a href="#/oldstreet" data-page="oldstreet">老街</a>
-        <a href="#/rainydayfilling" data-page="rainydayfilling">雨天備案</a>
-        <a href="#/staple" data-page="staple">伴手禮</a>
-        <a href="#/hotel" data-page="hotel">住宿</a>
-      </nav>
+    button.addEventListener("click", () => {
+      loadPage(page.key);
+    });
 
-      <main class="trip-main">
-        <div id="page-content">
-          載入中...
-        </div>
-      </main>
-
-    </div>
-  `;
+    nav.appendChild(button);
+  });
 }
 
-async function loadPage() {
-  const pageKey = getCurrentPage();
-  const page = pages[pageKey] || pages.home;
-  const content = document.getElementById("page-content");
+async function loadPage(pageKey) {
+  const page = tripConfig.pages.find(item => item.key === pageKey);
 
-  if (!content) return;
-
-  content.innerHTML = `
-    <div class="loading">
-      載入中...
-    </div>
-  `;
+  if (!page) {
+    document.getElementById("content").innerHTML = `
+      <section class="card">
+        <h2>找不到頁面</h2>
+        <p>頁面代號不存在：${pageKey}</p>
+      </section>
+    `;
+    return;
+  }
 
   try {
     const response = await fetch(basePath + page.file);
 
     if (!response.ok) {
-      throw new Error("Page not found");
+      throw new Error(`找不到頁面檔案：${page.file}`);
     }
 
     const html = await response.text();
+    document.getElementById("content").innerHTML = html;
 
-    document.title = `BerYa Trip - ${page.title}`;
-    content.innerHTML = html;
+    const newUrl = `?trip=${tripPath}&page=${page.key}`;
+    history.replaceState(null, "", newUrl);
 
-    setActiveNav(pageKey);
+    setActiveButton(page.key);
 
   } catch (error) {
-    content.innerHTML = `
+    document.getElementById("content").innerHTML = `
       <section class="card">
         <h2>頁面載入失敗</h2>
-        <p>找不到檔案：${basePath + page.file}</p>
-        <p>請確認 GitHub 檔名、大小寫與路徑是否正確。</p>
+        <p>請確認檔案是否存在：</p>
+        <code>${basePath + page.file}</code>
       </section>
     `;
+
+    console.error(error);
   }
 }
 
-function setActiveNav(pageKey) {
-  const links = document.querySelectorAll(".trip-nav a");
+function setActiveButton(pageKey) {
+  const buttons = document.querySelectorAll("#nav button");
 
-  links.forEach(link => {
-    if (link.dataset.page === pageKey) {
-      link.classList.add("active");
+  buttons.forEach((button, index) => {
+    const page = tripConfig.pages[index];
+
+    if (page.key === pageKey) {
+      button.classList.add("active");
     } else {
-      link.classList.remove("active");
+      button.classList.remove("active");
     }
   });
 }
-
-function init() {
-  renderShell();
-  loadPage();
-}
-
-window.addEventListener("hashchange", loadPage);
 
 init();
