@@ -1,0 +1,11 @@
+{
+  "title": "BerYa Trip｜旅遊規劃中",
+  "description": "目前旅遊內容正在整理中，完成後會開放完整行程頁面。",
+  "pages": [
+    {
+      "key": "home",
+      "title": "布告欄",
+      "file": "01_home.html"
+    }
+  ]
+}
