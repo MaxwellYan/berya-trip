@@ -1,6 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 
-const tripPath = params.get("trip") || "2026/june/yilan";
+const tripPath = params.get("trip") || "bulletin_board";
 const currentPage = params.get("page") || "home";
 
 const basePath = `./page_folder/${tripPath}/`;
