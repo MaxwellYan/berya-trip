@@ -1,0 +1,56 @@
+{
+  "title": "嘉義兩日遊",
+  "description": "整理嘉義旅遊行程、小吃、美食、景點與住宿。",
+  "pages": [
+    {
+      "key": "home",
+      "title": "首頁",
+      "file": "01_home.html"
+    },
+    {
+      "key": "journey",
+      "title": "行程",
+      "file": "02_journey.html"
+    },
+    {
+      "key": "snack",
+      "title": "小吃",
+      "file": "03_snack.html"
+    },
+    {
+      "key": "gourmetfood",
+      "title": "美食",
+      "file": "04_gourmetfood.html"
+    },
+    {
+      "key": "attractions",
+      "title": "景點",
+      "file": "05_attractions.html"
+    },
+    {
+      "key": "ecologicalfarm",
+      "title": "生態農場",
+      "file": "06_ecologicalfarm.html"
+    },
+    {
+      "key": "oldstreet",
+      "title": "老街",
+      "file": "07_oldstreet.html"
+    },
+    {
+      "key": "rainydayfilling",
+      "title": "雨天備案",
+      "file": "08_rainydayfilling.html"
+    },
+    {
+      "key": "staple",
+      "title": "主食",
+      "file": "09_staple.html"
+    },
+    {
+      "key": "hotel",
+      "title": "住宿",
+      "file": "10_hotel.html"
+    }
+  ]
+}
