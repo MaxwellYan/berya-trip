@@ -1,0 +1,56 @@
+{
+  "title": "宜蘭兩日遊",
+  "description": "整理宜蘭旅遊行程、小吃、美食、景點與住宿。",
+  "pages": [
+    {
+      "key": "home",
+      "title": "首頁",
+      "file": "home.html"
+    },
+    {
+      "key": "journey",
+      "title": "行程",
+      "file": "journey.html"
+    },
+    {
+      "key": "snack",
+      "title": "小吃",
+      "file": "snack.html"
+    },
+    {
+      "key": "gourmetfood",
+      "title": "美食",
+      "file": "gourmetfood.html"
+    },
+    {
+      "key": "attractions",
+      "title": "景點",
+      "file": "attractions.html"
+    },
+    {
+      "key": "ecologicalfarm",
+      "title": "生態農場",
+      "file": "ecologicalfarm.html"
+    },
+    {
+      "key": "oldstreet",
+      "title": "老街",
+      "file": "oldstreet.html"
+    },
+    {
+      "key": "rainydayfilling",
+      "title": "雨天備案",
+      "file": "rainydayfilling.html"
+    },
+    {
+      "key": "staple",
+      "title": "主食",
+      "file": "staple.html"
+    },
+    {
+      "key": "hotel",
+      "title": "住宿",
+      "file": "hotel.html"
+    }
+  ]
+}
