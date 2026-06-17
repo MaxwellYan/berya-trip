@@ -5,52 +5,52 @@
     {
       "key": "home",
       "title": "首頁",
-      "file": "home.html"
+      "file": "01_home.html"
     },
     {
       "key": "journey",
       "title": "行程",
-      "file": "journey.html"
+      "file": "02_journey.html"
     },
     {
       "key": "snack",
       "title": "小吃",
-      "file": "snack.html"
+      "file": "03_snack.html"
     },
     {
       "key": "gourmetfood",
       "title": "美食",
-      "file": "gourmetfood.html"
+      "file": "04_gourmetfood.html"
     },
     {
       "key": "attractions",
       "title": "景點",
-      "file": "attractions.html"
+      "file": "05_attractions.html"
     },
     {
       "key": "ecologicalfarm",
       "title": "生態農場",
-      "file": "ecologicalfarm.html"
+      "file": "06_ecologicalfarm.html"
     },
     {
       "key": "oldstreet",
       "title": "老街",
-      "file": "oldstreet.html"
+      "file": "07_oldstreet.html"
     },
     {
       "key": "rainydayfilling",
       "title": "雨天備案",
-      "file": "rainydayfilling.html"
+      "file": "08_rainydayfilling.html"
     },
     {
       "key": "staple",
       "title": "主食",
-      "file": "staple.html"
+      "file": "09_staple.html"
     },
     {
       "key": "hotel",
       "title": "住宿",
-      "file": "hotel.html"
+      "file": "10_hotel.html"
     }
   ]
 }
